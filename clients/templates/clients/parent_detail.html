@@ -5,10 +5,22 @@
 <h1>{{ object.name }} ({{ object.country }})</h1>
 
 <h2>Tiers</h2>
-<ul>
-{% for tier in object.tiers %}
-    <li>{{ tier.tier|default:'-- No Tier --' }} ({{ tier.start_date }})</li>
-{% endfor %}
-</ul>
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Start Date</td>
+    </thead>
+
+    <tbody>
+        {% for tier in object.tiers %}
+        <tr>
+            <td>{{ tier.tier|default:'-- No Tier --' }}</td>
+            <td>{{ tier.start_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
