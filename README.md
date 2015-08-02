@@ -46,6 +46,6 @@ parent_id| 1
 name     | Comgame 576 Kft.
 country  | Hungary
 
-If the Parent and Retailer are really just the same thing, like they are in this situation, you could get rid of the Parent table. Any Retailer without a parent_id, for example, could be a parent.
+If the Parent and Retailer are really just the same thing, like they are in this situation, you could get rid of the Parent table. Any Retailer with a parent_id, for example, has a parent.
 
 Another thing I would want to do is clean up the data, so that there are not duplicates, retailers are not their own parents, and that there is an entry in the Parent table for each Retailer that references a Parent. That should be done to maintain the foreign key constraint on the Retailer.
