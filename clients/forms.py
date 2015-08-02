@@ -12,5 +12,8 @@ class RetailerForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(RetailerForm, self).__init__(*args, **kwargs)
+
+        # Because there are duplicate names in the Parent db,
+        #   build the choices manually.
         parent_choices = [(r.name, r.name) for r in Parent.objects.active_tiers()]
         self.fields['parent_name'].choices = parent_choices
