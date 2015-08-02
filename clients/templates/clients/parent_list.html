@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Parents</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>Parent</td>
+            <td>Tier</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for parent in object_list %}
+        <tr>
+            <td><a href="{% url 'parent_detail' parent.pk %}">{{ parent.name }}</a></td>
+            <td>{{ parent.tier|default:'-- No Tier --' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

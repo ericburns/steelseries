@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Retailers</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td>Retailer</td>
+            <td>Parent</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for retailer in object_list %}
+        <tr>
+            <td><a href="{% url 'retailer_edit' retailer.pk %}">{{ retailer.name }}</a></td>
+            <td>{{ retailer.parent_name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

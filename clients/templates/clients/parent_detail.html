@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ object.name }} ({{ object.country }})</h1>
+
+<h2>Tiers</h2>
+<ul>
+{% for tier in object.tiers %}
+    <li>{{ tier.tier|default:'-- No Tier --' }} ({{ tier.start_date }})</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

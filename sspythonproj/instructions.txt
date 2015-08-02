@@ -1,0 +1,41 @@
+Administration of Clients and their Tiers
+------------------------------------------------------------------
+We have a system which keeps track of the level of kickbacks that each distributor and retailer can get (it's a type of discount). Currently, this is a bunch of disconnected database tables, so we'd like to improve it and give it an interface.
+
+It consists of 2 tables:
+Parents: This table contains a country name, a parent name, a "tier", a distributor field (ignore this) and a date. The row with the newest date for each country/parent combination is the current one.
+Retailers: This table contains a name and a parent_name which refers to the name in the parents table, as well as a country name.
+
+Data is attached in CSV format. Assume the structure is fixed for now, so you'll have to work with what's available. There are no lookup tables for countries and tiers, they'll just magically start existing once they are used.
+
+
+The Assignment
+------------------------------------------------------------------
+We'd like a small interface where it's possible to:
+
+1. See a list of retailers, including which parent they belong to.
+2. See a list of parents, including their active tier
+3. Go to a single parent and see a history of their tiers in reverse chonological order (newest on top)
+4. Change a retailers parent to one of the existing parents.
+
+
+Instructions
+------------------------------------------------------------------
+- Use Django and sqlite. Please include the sqlite file in the delivery.
+- You can't use Django's admin interface to make this. We need to see how you write views and routes etc. If you want to use django's admin while testing, that's fine.
+- This is an actual task we had a while ago, albeit simplified. So don't use too much time on it. 2-3 hours should suffice.
+- It doesn't matter if you don't get through all 4 items on the list.
+- It doesn't need to look pretty on the frontend. So if you're writing javascript or css, you're probably spending too much time on it.
+- It doesn't matter how you get the CSV files into the database.
+
+
+Delivery
+------------------------------------------------------------------
+- The whole django project (including the database)
+- A small readme explaining your reasoning and design decisions wouldn't hurt.
+- Once you've gathered everything, send over a link to a git repository where we can access it.
+
+
+Bonus question
+------------------------------------------------------------------
+It's fairly obvious that this database schema isn't optimal. How would you design it instead?

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Steel Series Client Admin</title>
+</head>
+
+<body>
+    <h1>Steel Series Client Admin</h1>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'parents' %}">Parents</a></li>
+        <li><a href="{% url 'retailers' %}">Retailers</a></li>
+    </ul>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>
