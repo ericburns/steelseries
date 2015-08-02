@@ -22,29 +22,29 @@ Bonus question
 This is what I think I would have done.
 
 
-Parent
-------
-id              # 1
-name            # Comgame 576 Kft.
-country         # Hungary
+Parent  | (i.e.)
+------- | ------
+id      | 1
+name    | Comgame 576 Kft.
+country | Hungary
 
-Tier
-----
-id              # 1
-name            # EUR Tier 1
+Tier | (i.e.)
+---- | ------
+id   | 1
+name | EUR Tier 1
 
-Kickback
---------
-id              # 1
-tier_id         # 1
-start_date      # 2013-05-01
+Kickback | (i.e.)
+-------- | ------
+id       | 1
+tier_id  | 1
+start_date | 2013-05-01
 
-Retailer
---------
-id              # 1
-parent_id       # 1
-name            # Comgame 576 Kft.
-country         # Hungary
+Retailer | (i.e.)
+-------- | ------
+id       | 1
+parent_id| 1
+name     | Comgame 576 Kft.
+country  | Hungary
 
 If the Parent and Retailer are really just the same thing, like they are in this situation, you could get rid of the Parent table. Any Retailer without a parent_id, for example, could be a parent.
 
